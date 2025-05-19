@@ -179,7 +179,7 @@ class TestApiClient:
             self.config_mock(mocked, "accessToken", "accessToken_ok")
             self.config_mock(mocked, "getAlarmMessage", "getAlarmMessage_ok")
             data = self.loop.run_until_complete(self.api_client.async_api_getAlarmMessage("8L0DF93PAZ55FD2"))
-            assert data["alarms"][0]["msgType"] == "human"
+            assert data["alarms"][0]["labelType"] == "humanAlarm"
 
     def test_listDeviceAbility_ok(self):  # pylint: disable=invalid-name
         """Test listDeviceAbility: ok."""

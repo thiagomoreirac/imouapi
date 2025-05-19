@@ -227,8 +227,8 @@ class ImouBinarySensor(ImouEntity):
                 raise InvalidResponse(f"alarms not found in {data}")
             if len(data["alarms"]) > 0:
                 alarm = data["alarms"][0]
-                if "time" not in alarm or "type" not in alarm or "msgType" not in alarm or "deviceId" not in alarm:
-                    raise InvalidResponse(f"time, type, msgType or deviceId not found in {alarm}")
+                if "time" not in alarm or "type" not in alarm or "labelType" not in alarm or "deviceId" not in alarm:
+                    raise InvalidResponse(f"time, type, labelType or deviceId not found in {alarm}")
                 # convert it into ISO 8601
                 alarm_time = datetime.utcfromtimestamp(alarm["time"]).isoformat()
                 # if previously stored alarm time is different, an alarm occurred in the mean time
@@ -239,7 +239,7 @@ class ImouBinarySensor(ImouEntity):
                 # save attributes
                 self._attributes = {
                     "alarm_time": alarm_time,
-                    "alarm_type": alarm["msgType"],
+                    "alarm_type": alarm["labelType"],
                     "alarm_code": alarm["type"],
                 }
 

@@ -265,7 +265,7 @@ MOCK_RESPONSES = {
             "data": {
                 "alarms": [
                     {
-                        "msgType": "human",
+                        "labelType": "humanAlarm",
                         "alarmId": "1623428357863536",
                         "name": "8L0DF93PAZ55FD2-1",
                         "time": 1664127393,
@@ -278,7 +278,7 @@ MOCK_RESPONSES = {
                         "token": "12375a23d4e64c2f84120bc76a7fa6c5_big",
                     },
                     {
-                        "msgType": "human",
+                        "labelType": "humanAlarm",
                         "alarmId": "1640588402878576",
                         "name": "8L0DF93PAZ55FD2-1",
                         "time": 1664021890,
